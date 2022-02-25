@@ -1,9 +1,12 @@
 import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import { AiOutlineDelete } from 'react-icons/ai'
 
 const Store = ({ todos, delhand }) => {
     return <>
         {todos.map((todos, index) => {
-            return <h5 key={index}>{todos} &nbsp;<button className="btn btn-success" onClick={() => delhand(index)}>Delete</button></h5>
+            return <Container  key={index} style={{ boxSizing: 'borderBox' }}>
+            <Row> <Col style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>{todos} <button className="btn btn-success" onClick={() => delhand(index)}> <AiOutlineDelete /></button> </Col></Row></Container>
         })}
     </>;
 };
